@@ -15,7 +15,7 @@ function bodyHas(propName) {
 }
 
 function orderExists(req, res, next) {
-  const orderId = req.params.orderId;
+  const { orderId } = req.params;
   const findId = orders.find((order) => order.id === orderId);
   if (findId) {
     res.locals.order = findId;
